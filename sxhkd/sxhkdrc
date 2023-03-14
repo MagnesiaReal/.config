@@ -1,0 +1,305 @@
+### terminal emulator ###
+super + Return
+  ~/.config/magne-scripts/shelldir.sh
+
+
+
+#### REALOAD sxhkd ####
+super + r
+	pkill -USR1 -x sxhkd
+
+# Refresh bspwm
+super + shift + r
+  ~/.config/bspwm/bspwmrcReload
+
+
+
+# powermenu
+super + q
+  ~/.config/polybar/magneciareal/scripts/powermenu.sh
+
+ 
+
+# kill program
+super + shift + Escape
+	bspc node -k
+
+# close window
+super + Escape
+  bspc node -c
+
+
+# send the newest marked node to the newest preselected node
+super + y
+	bspc node newest.marked.local -n newest.!automatic.local
+
+# layout monocle
+super + m
+	bspc desktop -l next
+
+
+# windows state
+super + f
+  bspc node -t \~fullscreen
+super + {t,shift + t}
+	bspc node -t \~{tiled,pseudo_tiled}
+super + shift + space
+  bspc node -t \~floating
+
+
+# set the node flags
+super + ctrl + {m,x,y,z}
+	bspc node -g {marked,locked,sticky,private}
+
+
+# focus the node in the given direction
+super + {h,j,k,l}
+  DIR={west,south,north,east}; \
+  bspc node -f $DIR || bspc monitor -f $DIR;
+
+
+# move the node in the given direction
+super + shift + {h,j,k,l}
+  DIR={west,south,north,east}; \
+	bspc node -s $DIR.local --follow || bspc node -m $DIR --follow
+
+
+# focus the node for the given path jump
+super + {p,b,comma,period}
+	bspc node -f @{parent,brother,first,second}
+
+
+super + shift + {comma, period}
+  bspc node -R {270, 90}
+
+
+# focus the next/previous desktop in the current monitor
+super + bracket{left,right}
+	bspc desktop -f {prev,next}
+
+# focus the last node/desktop
+super + {grave,Tab}
+	bspc node -f {next,prev}.local.!hidden.window
+
+
+# focus or send to the given desktop
+super + {_,shift + }{1-9,0}
+  bspc {desktop -f,node -d} '{1-9,10}'
+
+super + {_,shift + }KP_End
+  bspc {desktop -f,node -d} 1
+super + {_,shift + }KP_Down
+  bspc {desktop -f,node -d} 2
+super + {_,shift + }KP_Next
+  bspc {desktop -f,node -d} 3
+super + {_,shift + }KP_Left
+  bspc {desktop -f,node -d} 4
+super + {_,shift + }KP_Begin
+  bspc {desktop -f,node -d} 5
+super + {_,shift + }KP_Right
+  bspc {desktop -f,node -d} 6
+super + {_,shift + }KP_Home
+  bspc {desktop -f,node -d} 7
+super + {_,shift + }KP_Up
+  bspc {desktop -f,node -d} 8
+super + {_,shift + }KP_Prior
+  bspc {desktop -f,node -d} 9
+super + {_,shift + }KP_Insert
+  bspc {desktop -f,node -d} 10
+super + {_,shift + }KP_Delete
+  bspc {desktop -f,node -d} 11
+super + {_,shift + }KP_Enter
+  bspc {desktop -f,node -d} 12
+super + {_,shift + }KP_Add
+  bspc {desktop -f,node -d} 13
+super + {_,shift + }KP_Subtract
+  bspc {desktop -f,node -d} 14
+super + {_,shift + }KP_Multiply
+  bspc {desktop -f,node -d} 15
+
+
+#
+# preselect
+#
+
+# preselect the direction
+super + ctrl + {h,j,k,l,space}
+	bspc node -p {west,south,north,east,cancel}
+
+# preselect the ratio
+super + ctrl + {1-9}
+	bspc node -o 0.{1-9}
+
+
+# cancel the preselection for the focused desktop
+super + ctrl + shift + space
+	bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
+
+#
+# move/resize
+#
+
+# expandra window by moving one of its side outward
+super + alt + {h,j,k,l}
+	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
+
+# contract a window by moving one of its side inward
+super + alt + shift + {h,j,k,l}
+	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
+
+# move a floating window
+super + {Left,Down,Up,Right}
+	bspc node -v {-20 0,0 20,0 -20,20 0}
+
+super + ctrl + alt + {h, l}
+  desk=`bspc query -D -d focused --names`; \
+  bspc desktop -m {prev,next}; \
+  bspc monitor -f {prev,next}; \
+  for MONITOR in $(bspc query -M --names); do \
+    bspc monitor $MONITOR -o $(bspc query -m $MONITOR -D --names | sort -n); \
+  done; \
+  bspc desktop -f $desk
+
+super + space
+  bspc node focused -g hidden=on
+
+#super + alt + space
+  #HIDDEN=(`bspc query -N -n .hidden -d focused`); \
+  #[ $#HIDDEN -eq 0 ] || bspc node $HIDDEN[-1] -g hidden=off -t floating -f
+super + alt + space
+  HIDDEN=(`bspc query -N -n .hidden`); \
+  [ $#HIDDEN -eq 0 ] || bspc node $HIDDEN[-1] -g hidden=off -d focused -f
+
+#####################################################
+### ### ### CUSTOM MAGNECIAREAL SHORTCUTS ### ### ###
+#####################################################
+
+# All aplications
+super + d
+  ~/.config/polybar/magneciareal/scripts/launcher.sh
+
+# All opened windows
+super + shift + Tab
+  ~/.config/polybar/magneciareal/scripts/windows.sh
+
+#############################
+### ### MPD ShortCuts ### ###
+#############################
+# Power on/off mpd
+super + F12
+  ~/.config/magne-scripts/togglempd
+# All songs (first power on mpd)
+#super + ctrl + o
+#  ~/.config/polybar/magneciareal/scripts/mpdclient.sh -s
+super + ctrl + o
+  kitty --class kittyncmpcpp ncmpcpp
+
+alt + F5
+  mpc toggle
+alt + F6
+  mpc stop
+alt + F8
+  mpc next
+alt + F7
+  mpc prev
+
+
+XF86AudioPause
+  mpc pause
+XF86AudioPlay
+  mpc play
+XF86AudioNext
+  mpc next
+XF86AudioPrev
+  mpc prev
+
+#############################
+###### Toggle scripts #######
+#############################
+# Toggle picom
+super + ctrl + p
+  ~/.config/magne-scripts/togglepicom
+# Toggle keyboard layout
+super + ctrl + semicolon
+  ~/.config/magne-scripts/togglexkbmap
+
+# Change background image random
+super + ctrl + shift + b
+  ~/.config/magne-scripts/randomfeh.sh
+# Select background image
+super + ctrl + b
+  ~/.config/magne-scripts/rofi_image.sh ~/Pictures/Wallpapers/ ~/Pictures/Vwallpapers/
+super + shift + b
+  ~/.config/magne-scripts/rofi_live_wallpaper.sh
+
+
+
+#############################
+##### PrintScreen Modes #####
+#############################
+
+# Print Full screen and Save
+super + equal
+  maim "/home/$USER/Pictures/Screenshots/$(date +'%Y-%m-%d-%H:%M:%S').png"
+# Print Full screen and Copy to clipboard
+super + ctrl + equal
+  maim | xclip -selection clipboard -t image/png
+
+# Print current window and Save
+super + alt + equal
+  maim --window $(xdotool getactivewindow) "/home/$USER/Pictures/Screenshots/$(date +'%Y-%m-%d-%H:%M:%S').png"
+# Print current window and Copy to clipboard
+super + ctrl + alt + equal
+  maim --window $(xdotool getactivewindow) | xclip -selection clipboard -t image/png
+
+# Print selected Area and Save
+super + shift + equal
+  maim --select "/home/$USER/Pictures/Screenshots/$(date +'%Y-%m-%d-%H:%M:%S').png"
+#Print selected Area and copy to clipboard
+super + ctrl + shift + equal
+  maim --select | xclip -selection clipboard -t image/png
+
+
+
+#############################
+########### VOLUME ##########
+#############################
+
+XF86AudioRaiseVolume
+  pactl set-sink-volume @DEFAULT_SINK@ +5% &
+XF86AudioLowerVolume
+  pactl set-sink-volume @DEFAULT_SINK@ -5% &
+XF86AudioMute
+  pactl set-sink-mute @DEFAULT_SINK@ toggle &
+XF86AudioMicMute
+  pactl set-source-mute @DEFAULT_SOURCE@ toggle
+
+alt + F2
+  pactl set-sink-volume @DEFAULT_SINK@ +5% &
+alt + F1
+  pactl set-sink-volume @DEFAULT_SINK@ -5% &
+alt + F3
+  pactl set-sink-mute @DEFAULT_SINK@ toggle &
+alt + F4
+  pactl set-source-mute @DEFAULT_SOURCE@ toggle
+
+
+#############################
+######## Windows gap ########
+#############################
+
+super + shift + bracket{left,right}
+	{ bspc config -d focused window_gap $(( $(bspc config -d focused window_gap) + 10 )), \
+    [ $(bspc config -d focused window_gap) -ge 10 ] && \
+    bspc config -d focused window_gap $(( $(bspc config -d focused window_gap) - 10 )) }
+
+#############################
+###### SOME PROGRAMS ########
+#############################
+
+super + F11
+  mailspring &
+super + F10
+  qalculate-gtk &
+ctrl + shift + Escape
+  kitty --class kittyhtop bpytop

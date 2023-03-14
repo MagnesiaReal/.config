@@ -1,0 +1,20 @@
+colors:
+  body: none
+  date: MAGENTA
+  tags: CYAN
+  title: RED
+default_hour: 9
+default_minute: 0
+editor: nvim
+encrypt: false
+highlight: true
+indent_character: '|'
+journals:
+  default:
+    encrypt: false
+    journal: /home/magneciareal/Desktop/MementoMori/MagneciaLife/SupremeMagneDaily.magne
+linewrap: 79
+tagsymbols: '@'
+template: false
+timeformat: '%Y-%m-%d %H:%M'
+version: v2.8.4

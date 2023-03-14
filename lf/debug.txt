@@ -1,0 +1,6 @@
+77, 36, 75, 1, /home/magneciareal/Downloads/105084094_p0.jpg
+77, 36, 75, 1, /home/magneciareal/Downloads/102097739_p0.png
+77, 36, 75, 1, /home/magneciareal/Downloads/105084094_p0.jpg
+77, 36, 75, 1, /home/magneciareal/Downloads/105919422_p0 (1).png
+39, 36, 37, 1, /home/magneciareal/Downloads/105917991_p0.png
+39, 36, 37, 1, /home/magneciareal/Downloads/105869393_p0.png

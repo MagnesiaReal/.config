@@ -1,0 +1,10 @@
+#!/bin/sh
+TOGGLE=$HOME/.config/i3/.togglexkbmap
+
+if [ ! -e $TOGGLE ]; then
+    touch $TOGGLE
+    setxkbmap latam
+else
+    rm $TOGGLE
+    setxkbmap us
+fi
