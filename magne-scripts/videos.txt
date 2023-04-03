@@ -1,2 +1,2 @@
-xwinwrap -ov -g 2560x1440+0+292 -st -sp -ni -s -nf -b -- mpv -wid %WID /home/magneciareal/Videos/wallpapers/hmmmm.mp4 --no-osc --no-osd-bar --loop --no-audio --panscan=1.0 --no-input-default-bindings --quiet
-xwinwrap -ov -g 1080x1920+2560+0 -st -sp -ni -s -nf -b -- mpv -wid %WID /home/magneciareal/Videos/vwallpapers/eldenring_princess_360.mp4 --no-osc --no-osd-bar --loop --no-audio --panscan=1.0 --no-input-default-bindings --quiet
+xwinwrap -ov -g 2560x1440+0+292 -st -sp -ni -s -nf -b -- mpv -wid %WID /home/magneciareal/Videos/wallpapers/rei-ayanami-angel-neon-genesis-evangelion-1-moewalls.com.mp4 --no-osc --no-osd-bar --loop --no-audio --panscan=1.0 --no-input-default-bindings --quiet
+xwinwrap -ov -g 1080x1920+2560+0 -st -sp -ni -s -nf -b -- mpv -wid %WID /home/magneciareal/Videos/vwallpapers/a391968b9331d6631c2b5ef65f6f2fa8.webm --no-osc --no-osd-bar --loop --no-audio --panscan=1.0 --no-input-default-bindings --quiet

@@ -30,14 +30,9 @@ bspc rule -a riotclientuix.exe desktop='1'
 bspc rule -a leagueclientux.exe desktop='1'
 bspc rule -a Qalculate-gtk:qalculate-gtk state=floating
 bspc rule -a kittyncmpcpp state=floating center=on rectangle=1060x700+0+0
-bspc rule -a Eclipse:Eclipse desktop='9'
-bspc rule -a DBeaver:DBeaver desktop='8'
+bspc rule -a Eclipse:Eclipse desktop='9' follow=on
+bspc rule -a DBeaver:DBeaver desktop='8' follow=on
 
-#bspc rule -a Gimp desktop='^8' state=floating follow=on
-#bspc rule -a Chromium desktop='^2'
-#bspc rule -a mplayer2 state=floating
-#bspc rule -a Kupfer.py focus=on
-#bspc rule -a Screenkey manage=off
 
 xsetroot -cursor_name left_ptr
 
