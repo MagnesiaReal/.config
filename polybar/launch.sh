@@ -12,15 +12,22 @@ launch_bar() {
 
 	# Launch the bar
 	if [[ "$style" == "magneciareal" ]]; then
-    #if type "xrandr"; then
-        #for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
-            #MONITOR=$m polybar -q main -c "$dir/$style/config.ini" &
-        #done
-    #else
-        #polybar --reload example &
-    #fi
-    MONITOR="DisplayPort-1" polybar -q main2 -c "$dir/$style/config.ini" &
-    MONITOR="DisplayPort-0" polybar -q main -c "$dir/$style/config.ini" &
+
+		if type "xrandr"; then
+				while read -r monitor; do
+					m=`echo $monitor | cut -d" " -f1`
+					x=`echo $monitor | grep -oP "\d+x\d+" | cut -d 'x' -f1`
+					y=`echo $monitor | grep -oP "\d+x\d+" | cut -d 'x' -f2`
+
+					if [ $x -gt $y ]; then
+						MONITOR=$m polybar -q main -c "$dir/$style/config.ini" &
+					else
+						MONITOR=$m polybar -q main2 -c "$dir/$style/config.ini" &
+					fi
+				done <<< `xrandr | grep " connected"`
+		else
+				polybar --reload example &
+		fi
 
 	elif [[ "$style" == "hack" || "$style" == "cuts" ]]; then
 		polybar -q top -c "$dir/$style/config.ini" &

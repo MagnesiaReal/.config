@@ -1,7 +1,7 @@
 {
 
   "java.jdt.ls.java.home": "/usr/lib/jvm/java-19-openjdk",
-  "java.jdt.ls.vmargs": "-XX:+UseParallelGC -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90 -Dsun.zip.disableMemoryMapping=true -Xmx1G -Xms100m -Xlog:disable  -javaagent:\"/home/magneciareal/.config/coc/extensions/node_modules/coc-java-lombok/jar/lombok.jar\"",
+  "java.jdt.ls.vmargs": "-XX:+UseParallelGC -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90 -Dsun.zip.disableMemoryMapping=true -Xmx1G -Xms100m -Xlog:disable ",
   "java.jdt.ls.lombokSupport.enabled": false,
   "java.implementationsCodeLens.enabled": true,
   "java.signatureHelp.description.enabled": true,
@@ -12,18 +12,11 @@
     {
       "name": "JavaSE-1.8",
       "path": "/usr/lib/jvm/jdk1.8.0_281",
-    },
-    {
-      "name": "JavaSE-11",
-      "path": "/usr/lib/jvm/java-11-openjdk"
-    },{
-      "name": "JavaSE-17",
-      "path": "/usr/lib/jvm/java-17-openjdk"
+      "default": true
     },
     {
       "name": "JavaSE-19",
-      "path": "/usr/lib/jvm/java-19-openjdk",
-      "default": true
+      "path": "/usr/lib/jvm/java-19-openjdk"
     }
   ],
 

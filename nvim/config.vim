@@ -1,6 +1,7 @@
 " configs
 set tabstop=2
-set shiftwidth=2 smarttab
+set shiftwidth=2
+set smarttab
 set expandtab
 set autoindent
 

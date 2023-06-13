@@ -1,10 +1,7 @@
 #!/bin/sh
-TOGGLE=$HOME/.config/i3/.togglexkbmap
 
-if [ ! -e $TOGGLE ]; then
-    touch $TOGGLE
-    setxkbmap latam
-else
-    rm $TOGGLE
+if [ `setxkbmap -query | awk '$1 ~ /layout/ {print $2}'`  = "latam" ]; then
     setxkbmap us
+else
+    setxkbmap latam
 fi

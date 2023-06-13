@@ -10,8 +10,7 @@ super + r
 
 # Refresh bspwm
 super + shift + r
-  ~/.config/bspwm/bspwmrcReload
-
+  bspc wm -r
 
 
 # powermenu

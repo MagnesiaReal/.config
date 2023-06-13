@@ -1,6 +1,6 @@
 # interpreter for shell commands
 set shell zsh
-set hidden false # no hidde dot directories
+set hidden true # no hidde dot directories
 set previewer ~/.config/lf/lf_kitty_preview
 set cleaner ~/.config/lf/lf_kitty_clean
 set icons

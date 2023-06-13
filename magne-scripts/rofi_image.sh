@@ -3,7 +3,7 @@ VWALLPAPERS=~/Pictures/Vwallpapers/
 WALLPAPERS=~/Pictures/Wallpapers/
 
 mb() {
-  find $1 -type f -printf "%T@ %p\n" | sort -n | cut -d' ' -f2 | while read A ; do
+  find $1/ -type f -printf "%T@ %p\n" | sort -n | cut -d' ' -f2 | while read A ; do
     echo -en "${A##$1}\x00icon\x1f$A\n";
   done | awk '{print NR, $0}' | rofi -dmenu -theme ~/.config/polybar/magneciareal/scripts/rofi/launcher_image.rasi -i -kb-custom-1 "Alt+q" -p "" "$@"
 }
