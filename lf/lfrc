@@ -170,8 +170,8 @@ cmd q quit
 map <c-x> drag-and-drop
 map f :fzf_jump
 
-map Dd trash
-map DD delete
+map DD trash
+# map DD delete
 
 map a push :mkdir<space>
 map A push :mkfile<space>
