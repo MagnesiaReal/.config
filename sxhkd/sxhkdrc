@@ -187,6 +187,9 @@ super + shift + Tab
 # Power on/off mpd
 super + F12
   ~/.config/magne-scripts/togglempd
+
+XF86Tools
+  ~/.config/magne-scripts/togglempd
 # All songs (first power on mpd)
 #super + ctrl + o
 #  ~/.config/polybar/magneciareal/scripts/mpdclient.sh -s
@@ -224,12 +227,12 @@ super + ctrl + semicolon
 
 # Change background image random
 super + ctrl + shift + b
-  ~/.config/magne-scripts/randomfeh.sh
+  ~/.config/magne-scripts/randomfeh.sh /mnt/Disk1/Pictures/Wallpapers /mnt/Disk1/Pictures/Vwallpapers/
 # Select background image
 super + ctrl + b
-  ~/.config/magne-scripts/rofi_image.sh ~/Pictures/Wallpapers/ ~/Pictures/Vwallpapers/
+  ~/.config/magne-scripts/rofi_image.sh /mnt/Disk1/Pictures/Wallpapers /mnt/Disk1/Pictures/Vwallpapers/
 super + shift + b
-  ~/.config/magne-scripts/rofi_live_wallpaper.sh
+  ~/.config/magne-scripts/rofi_live_wallpaper.sh /mnt/Disk1/Videos/Wallpapers/ /mnt/Disk1/Videos/Vwallpapers/
 
 
 

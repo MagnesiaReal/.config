@@ -1,1 +1,0 @@
-xwinwrap -ov -g 2560x1440+0+0 -st -sp -ni -s -nf -b -- mpv -wid %WID /home/magneciareal/Videos/wallpapers/pink-astronaut-in-deep-space-4k-free-live-wallpaper.mp4 --no-osc --no-osd-bar --loop --no-audio --panscan=1.0 --no-input-default-bindings --quiet

@@ -1,7 +1,0 @@
-#!/bin/sh
-
-if [ `setxkbmap -query | awk '$1 ~ /layout/ {print $2}'`  = "latam" ]; then
-    setxkbmap us
-else
-    setxkbmap latam
-fi

@@ -1,0 +1,35 @@
+sw_volume: 100
+audio_device_state:1:my_fifo
+audio_device_state:1:pulse audio
+state: play
+current: 19
+time: 120.400000
+random: 1
+repeat: 0
+single: 0
+consume: 0
+crossfade: 0
+mixrampdb: 0.000000
+mixrampdelay: -1.000000
+playlist_begin
+0:[Synthesia] Toradora OST - Lost my pieces (Piano) [Toradora].mp3
+1:Ark Patrol - Let Go (feat. Veronika Redd).mp3
+2:as the world caves in orchestral version (slowed  reverbed) by matt maltese.mp3
+3:Clairo - Sofia (Slowed to Perfection).mp3
+4:Come inuyasha.mp3
+5:d4vd - Poetic Vulgarity (Official Audio).mp3
+6:joji - die for you ( slowed  reverb ).mp3
+7:Joji - Ew.mp3
+8:Joji - MODUS.mp3
+9:matt maltese - as the world caves in  orchestral (slowed to perfection).mp3
+10:Gimme Love.mp3
+11:joji - glimpse of us (slowed  reverb).mp3
+12:Sofia.mp3
+13:Like You Do.mp3
+14:Joji - Die For You.mp3
+15:Gilbert OSullivan - Alone Again Naturally [HQ - FLAC].mp3
+16:Global scale.mp3
+17:Bandalos/Bandalos Chinos  - Sin Señal (video oficial).mp3
+18:Bandalos/Bandalos Chinos - Demasiado (video oficial).mp3
+19:Bandalos/Bandalos Chinos - Mi Fiesta (Video Oficial).mp3
+playlist_end
