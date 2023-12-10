@@ -1,0 +1,2 @@
+xwinwrap -ov -g 2560x1440+0+292 -st -sp -ni -s -nf -b -- mpv -wid %WID /mnt/Disk1/Videos/Wallpapers/gen_review.mp4 --no-osc --no-osd-bar --loop --no-audio --panscan=1.0 --no-input-default-bindings --quiet
+xwinwrap -ov -g 1080x1920+2560+0 -st -sp -ni -s -nf -b -- mpv -wid %WID /mnt/Disk1/Videos/Vwallpapers/honv.mp4 --no-osc --no-osd-bar --loop --no-audio --panscan=1.0 --no-input-default-bindings --quiet

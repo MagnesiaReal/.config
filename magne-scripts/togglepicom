@@ -1,0 +1,17 @@
+#!/bin/sh
+
+NOTIFY_ICONE=$HOME/.icons/Fancy-Dark-Icons/apps/48/xterm.svg
+NOTIFY_ICONO=$HOME/.icons/Fancy-Dark-Icons/apps/48/diaspora.svg
+
+if ! command -v picom &> /dev/null; then
+  notify-send -i "$NOTIFY_ICONE" COMMAND "This command does not exist !!!"
+  exit;
+fi
+
+if pgrep -x "picom"; then
+  notify-send -i $NOTIFY_ICONE PICOM "Compositor killed succesfully"
+  pkill picom
+else
+  picom -bf
+  notify-send -i $NOTIFY_ICONO PICOM "Compositor already up" 
+fi
