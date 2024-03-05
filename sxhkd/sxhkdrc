@@ -227,12 +227,12 @@ super + ctrl + semicolon
 
 # Change background image random
 super + ctrl + shift + b
-  ~/.config/magne-scripts/randomfeh.sh /mnt/Disk1/Pictures/Wallpapers /mnt/Disk1/Pictures/Vwallpapers/
+  ~/.config/magne-scripts/randomfeh.sh ~/Pictures/Wallpapers
 # Select background image
 super + ctrl + b
-  ~/.config/magne-scripts/rofi_image.sh /mnt/Disk1/Pictures/Wallpapers /mnt/Disk1/Pictures/Vwallpapers/
+  ~/.config/magne-scripts/rofi_image.sh ~/Pictures/Wallpapers
 super + shift + b
-  ~/.config/magne-scripts/rofi_live_wallpaper.sh /mnt/Disk1/Videos/Wallpapers/ /mnt/Disk1/Videos/Vwallpapers/
+  ~/.config/magne-scripts/rofi_live_wallpaper.sh ~/Videos/Wallpapers/
 
 
 
@@ -285,6 +285,17 @@ alt + F3
 alt + F4
   pactl set-source-mute @DEFAULT_SOURCE@ toggle
 
+
+#############################
+######### BRIGNESS ##########
+#############################
+# Increase brightness
+XF86MonBrightnessUp
+    brightnessctl s +5%
+
+# Decrease brightness
+XF86MonBrightnessDown
+    brightnessctl s 5%-
 
 #############################
 ######## Windows gap ########
