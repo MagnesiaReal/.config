@@ -5,11 +5,13 @@ Plug 'rafi/awesome-vim-colorschemes'  " Plug for theme colors schemes
 Plug 'neoclide/coc.nvim', {'branch': 'release'}  " Plug for support languages autocomplete
 Plug 'preservim/nerdcommenter'  "Plug for Comment multi line 
 
-
+" For searching files and words on files
 Plug 'nvim-lua/plenary.nvim'  " Plug for Telescope searcher
 Plug 'nvim-telescope/telescope.nvim' "Plug for smart fetch file
 Plug 'startup-nvim/startup.nvim' " Plug for starup menu if empty file
 
+"the lightline bellow the terminal, usefull to see position, decode file and
+"many other things
 Plug 'itchyny/lightline.vim' " Plug status bar but is better barline lightline
 Plug 'josa42/vim-lightline-coc' "For display Coc diagnostics on lighline 
 
@@ -17,7 +19,12 @@ Plug 'josa42/vim-lightline-coc' "For display Coc diagnostics on lighline
 Plug 'neovim/nvim.net'  " Plug for .NET
 Plug 'OmniSharp/omnisharp-vim' " Plug for .NET C#
 Plug 'puremourning/vimspector' " Plug for Debugging program
+
+
 Plug 'tpope/vim-dadbod' " Plug install for SQl need coc-db
+Plug 'kristijanhusak/vim-dadbod-ui' "Plug for ui sql
+
+
 Plug 'terryma/vim-multiple-cursors' " Plug for Multiople cursors
 Plug 'kyazdani42/nvim-web-devicons' " Recommended (for coloured icons)
 Plug 'seblj/nvim-tabline'
@@ -27,20 +34,13 @@ Plug 'lukas-reineke/indent-blankline.nvim' " pretty indent line
 Plug 'petertriho/nvim-scrollbar' " scrollbar requires hlslens for display in scroll bar searched words
 Plug 'kevinhwang91/nvim-hlslens' " For search  words with # and navigate into coincidences
 
-Plug 'ptzz/lf.vim'
-Plug 'voldikss/vim-floaterm'
-
 Plug 'sheerun/vim-polyglot' " may better than treesitter
 Plug 'psliwka/vim-smoothie' " smoothie scroll
 Plug 'ghifarit53/tokyonight-vim' " color scheme
 
 
-
 "Default plugs
-" Make sure you use single quotes
-Plug 'junegunn/vim-easy-align'
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
-Plug 'https://github.com/junegunn/vim-github-dashboard.git'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
 
 call plug#end()
@@ -93,12 +93,9 @@ endfunction
 
 autocmd User CocGitStatusChange {command}
 
-
 source ~/.config/nvim/custom-confs.vim
 source ~/.config/nvim/coc-config.vim
-source ~/.config/nvim/config.vim
 source ~/.config/nvim/awesome-config.vim
-source ~/.config/nvim/eleline.vim
 source ~/.config/nvim/git-config.vim
 source ~/.config/nvim/telescope-config.vim
 source ~/.config/nvim/treesitter-config.vim
@@ -110,3 +107,4 @@ source ~/.config/nvim/indent-blankline.vim
 source ~/.config/nvim/scrollbar.vim
 source ~/.config/nvim/nvim-hlslens.vim
 source ~/.config/nvim/vim-polyglot.vim
+source ~/.config/nvim/config.vim

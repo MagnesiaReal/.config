@@ -1,15 +1,15 @@
 #! /bin/zsh
 pgrep -x sxhkd > /dev/null || sxhkd &
 
-
+~/.screenlayout/automonitors.sh
 
 if [ `xrandr --listmonitors | awk '$1 ~ "Monitor" {print $2}'` = '1' ]; then
   m=`xrandr --listmonitors | awk 'NR > 1 {print $NF}'`
   notify-send "monitor $m"
   bspc monitor $m -d 1 2 3 4 5 6 7 8 9 10
 else 
-  bspc monitor DP-1 -d 1 2 3 4 5 6
-  bspc monitor DP-2 -d 7 8 9 10
+  bspc monitor DisplayPort-0 -d 1 2 3 4 5 6
+  bspc monitor DisplayPort-1 -d 7 8 9 10
 fi
 
 bspc config border_width         2
@@ -43,13 +43,15 @@ bspc rule -a DBeaver:DBeaver desktop='8' follow=on
 xsetroot -cursor_name left_ptr
 
 ## MAGNECIAREAL ##  
-udiskie &
 lxpolkit &
 
-# time-tracker for see applications did you use
-arbtt-capture &
+vnc=$(xrandr | grep " connected" | cut -d\  -f1)
 
-picom -bf
+if [[ $vnc =~ "VNC" ]]; then
+  echo "sdkfjdkf"
+else 
+  picom -bf
+fi
 
 xss-lock --transfer-sleep-lock -- i3lock-fancy-dualmonitor &
 
@@ -62,6 +64,31 @@ xss-lock --transfer-sleep-lock -- i3lock-fancy-dualmonitor &
 # thunar --daemon &
 pgrep -f "udiskie -s -f xdg-open" || udiskie -s -f xdg-open
 pgrep -f "bluetooth-autoconnect --daemon" || bluetooth-autoconnect --daemon &
+
+
+# Function to get the size of the XRDP window
+get_xrdp_window_size() {
+    # Get the screen resolution using xrandr
+    screen_size=$(xrandr | grep -oP 'current \K(\d+) x (\d+)')
+    echo "$screen_size"
+}
+
+# Function to set the screen resolution using xrandr
+set_screen_resolution() {
+    resolution="$1"
+    xrandr --output Virtual-1 --mode "$resolution"
+}
+
+# Main loop
+while true; do
+    window_size=$(get_xrdp_window_size)
+    set_screen_resolution "$window_size"
+    sleep 1  # Adjust polling interval as needed
+done &
+
+
+
+
 
 kill -9 `pgrep -f "bspc subscribe report node_flag node_focus"`
 while read -r line; do

@@ -19,10 +19,12 @@
       "path": "/usr/lib/jvm/java-19-openjdk"
     }
   ],
-
+  
   "xml.completion.autoCloseTags": true,
   "semanticTokens.enable": true,
   "codeLens.enable": false,
+  
+  "tsserver.trace.server": "verbose",
 
   "languageserver": {
     "bash": {

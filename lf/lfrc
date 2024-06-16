@@ -105,9 +105,7 @@ cmd zip ${{
 ################ Custom functions ################
 cmd mkdir %mkdir -p "$@"
 
-cmd drag-and-drop &dragon-drop -a -x $fx --and-exit
-
-cmd paste $cp-p --lf-paste $id
+cmd drag-and-drop &dragon -a -x $fx --and-exit
 
 cmd fzf_jump ${{
     res="$(find . -maxdepth 1 | fzf --reverse --header='Jump to location' | sed 's/\\/\\\\/g;s/"/\\"/g')"
@@ -190,7 +188,7 @@ map gL cd ~/.local/
 
 
 map gr cd /run/media/
-map gm cd /mnt
+map gm cd /media/magneciareal/
 map gcd push :cd<space>
 
 map <c-g>b :git_branch
@@ -198,6 +196,3 @@ map <c-g>b :git_branch
 map <c-g>s ${{clear; git status; echo "press ENTER"; read ENTER}}
 map <c-g>l ${{clear; git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit}}
 
-cmd on-select &{{
-    lf -remote "send $id set statfmt \"$(exa -ld --color=always "$f")\""
-}}

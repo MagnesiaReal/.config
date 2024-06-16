@@ -19,3 +19,8 @@ endfunction
 
 autocmd FileType sql setlocal omnifunc=vim_dadbod_completion#omni
 autocmd FileType text let b:coc_suggest_disable = 1
+
+
+" Horizontal scroll
+map <C-L> 20zl " Scroll 20 characters to the right
+map <C-H> 20zh " Scroll 20 characters to the left
