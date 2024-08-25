@@ -230,7 +230,7 @@ super + ctrl + shift + b
   ~/.config/magne-scripts/randomfeh.sh /mnt/Disk1/Pictures/Wallpapers /mnt/Disk1/Pictures/Vwallpapers/
 # Select background image
 super + ctrl + b
-  ~/.config/magne-scripts/rofi_image.sh /mnt/Disk1/Pictures/Wallpapers /mnt/Disk1/Pictures/Vwallpapers/
+  ~/.config/magne-scripts/rofi_image.sh /home/magneciareal/Pictures/Wallpapers /home/magneciareal/Pictures/Vwallpapers/
 super + shift + b
   ~/.config/magne-scripts/rofi_live_wallpaper.sh /mnt/Disk1/Videos/Wallpapers/ /mnt/Disk1/Videos/Vwallpapers/
 

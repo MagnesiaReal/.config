@@ -11,6 +11,7 @@ launch_bar() {
 	while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
 	# Launch the bar
+	
 	if [[ "$style" == "magneciareal" ]]; then
 
 		if type "xrandr"; then
@@ -28,7 +29,6 @@ launch_bar() {
 		else
 				polybar --reload example &
 		fi
-
 	elif [[ "$style" == "hack" || "$style" == "cuts" ]]; then
 		polybar -q top -c "$dir/$style/config.ini" &
 		polybar -q bottom -c "$dir/$style/config.ini" &
@@ -79,13 +79,6 @@ elif [[ "$1" == "--forest" ]]; then
 	style="forest"
 	launch_bar
 
-elif [[ "$1" == "--pwidgets" ]]; then
-	style="pwidgets"
-	launch_bar
-
-elif [[ "$1" == "--panels" ]]; then
-	style="panels"
-	launch_bar
 elif [[ "$1" == "--magneciareal" ]]; then
 	style="magneciareal"
 	launch_bar
@@ -97,6 +90,6 @@ else
 	Available Themes :
 	--blocks    --colorblocks    --cuts      --docky
 	--forest    --grayblocks     --hack      --material
-	--panels    --pwidgets       --shades    --shapes
+	--shades    --shapes
 	EOF
 fi

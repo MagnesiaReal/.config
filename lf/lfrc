@@ -165,7 +165,7 @@ cmd newtab ${{
 
 cmd q quit
 
-map <c-x> drag-and-drop
+map <c-x> dragon-drop
 map f :fzf_jump
 
 map DD trash
@@ -185,10 +185,9 @@ map gM cd ~/Music/
 map gV cd ~/Videos/
 map gC cd ~/.config/
 map gL cd ~/.local/
-
+map gm cd /mnt/
 
 map gr cd /run/media/
-map gm cd /media/magneciareal/
 map gcd push :cd<space>
 
 map <c-g>b :git_branch

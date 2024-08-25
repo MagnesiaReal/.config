@@ -27,13 +27,8 @@ bspc config gapless_monocle      false
 bspc rule -a kittyupdater:kittyupdater desktop='10' follow=on
 bspc rule -a Google-chrome desktop='2'
 bspc rule -a Mailspring:mailspring desktop='2' follow=on
-bspc rule -a Thunar desktop='3' follow=on
 bspc rule -a kittylf desktop='3' follow=on
 bspc rule -a kittyranger desktop='3' follow=on
-bspc rule -a jetbrains-idea-ce desktop='8'
-bspc rule -a leagueclient.exe desktop='1'
-bspc rule -a riotclientuix.exe desktop='1'
-bspc rule -a leagueclientux.exe desktop='1'
 bspc rule -a Qalculate-gtk:qalculate-gtk state=floating
 bspc rule -a kittyncmpcpp state=floating center=on rectangle=1060x700+0+0
 bspc rule -a Eclipse:Eclipse desktop='9' follow=on
